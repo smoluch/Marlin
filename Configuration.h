@@ -139,7 +139,7 @@
 // 52 is 200k thermistor - ATC Semitec 204GT-2 (1k pullup)
 // 55 is 100k thermistor - ATC Semitec 104GT-2 (Used in ParCan) (1k pullup)
 
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 60
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 1
@@ -205,9 +205,14 @@
 //    #define  DEFAULT_Kd 440
 
 // KosselMini by Smoluch
-    #define  DEFAULT_Kp 19.75
-    #define  DEFAULT_Ki 1.41
-    #define  DEFAULT_Kd 68.91
+//    #define  DEFAULT_Kp 19.75
+//    #define  DEFAULT_Ki 1.41
+//    #define  DEFAULT_Kd 68.91
+    
+//    Feniks head by Smoluch
+    #define  DEFAULT_Kp 29.46
+    #define  DEFAULT_Ki 2.11
+    #define  DEFAULT_Kd 103.2
 
 #endif // PIDTEMP
 
@@ -360,7 +365,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // For deltabots this means top and center of the cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 258.3  // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 248.1  // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 24  // Distance between autolevel Z probing points, should be less than print surface radius/3.
 
@@ -368,7 +373,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
 #define HOMING_FEEDRATE {200*60, 200*60, 200*60, 0}  // set the homing speeds (mm/min)
 
-#define Z_PROBE_OFFSET {0, 13.6, -3.5, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. //[Smoluch] add to Z to increase offset //was -3.53  
+#define Z_PROBE_OFFSET {0.4, 13.4, -4.95, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. //[Smoluch] add to Z to increase distance bed - head //was -3.53
+// [Smoluch] new priting head. Old values {0, 13.6, -3.50, 0}
 
 // default settings
 
