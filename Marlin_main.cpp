@@ -172,7 +172,7 @@ float add_homeing[3]={0,0,0};
 
 // ported by Smoluch
 #ifdef DELTA
-  float endstop_adj[3]={0.0,-0.31,-0.72};
+  float endstop_adj[3]={-0.3,-0.2,0}; // X-0.3 Y-0.2 Z0
 #endif
 
 float min_pos[3] = { X_MIN_POS, Y_MIN_POS, Z_MIN_POS };
@@ -851,7 +851,7 @@ void deploy_z_probe() {
   prepare_move_raw();
 
   feedrate = homing_feedrate[X_AXIS]/10;
-  destination[X_AXIS] = -10; //was -10
+  destination[X_AXIS] = -5; //was -10
   prepare_move_raw();
   st_synchronize();
 }
@@ -868,7 +868,7 @@ void retract_z_probe() {
 
   // Move the nozzle below the print surface to push the probe up.
   feedrate = homing_feedrate[Z_AXIS]/10;
-  destination[Z_AXIS] = current_position[Z_AXIS] - 22;  //was 20
+  destination[Z_AXIS] = current_position[Z_AXIS] - 20;  //was 20
   prepare_move_raw();
 
   feedrate = homing_feedrate[Z_AXIS];

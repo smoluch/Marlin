@@ -80,13 +80,13 @@
 // Make delta curves from many straight lines (linear interpolation).
 // This is a trade-off between visible corners (not enough segments)
 // and processor overload (too many expensive sqrt calls).
-#define DELTA_SEGMENTS_PER_SECOND 100
+#define DELTA_SEGMENTS_PER_SECOND 200
 
 // Center-to-center distance of the holes in the diagonal push rods.
 #define DELTA_DIAGONAL_ROD 214.0 // mm
 
 // Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 144.8 // mm
+#define DELTA_SMOOTH_ROD_OFFSET 145 // mm
 
 // Horizontal offset of the universal joints on the end effector.
 #define DELTA_EFFECTOR_OFFSET 19.9 // mm
@@ -365,7 +365,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // For deltabots this means top and center of the cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 248.1  // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 248.1+0.2-1.3 // For delta: Distance between nozzle and print surface after homing.
 
 #define AUTOLEVEL_GRID 24  // Distance between autolevel Z probing points, should be less than print surface radius/3. 24
 
@@ -373,7 +373,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
 #define HOMING_FEEDRATE {200*60, 200*60, 200*60, 0}  // set the homing speeds (mm/min)
 
-#define Z_PROBE_OFFSET {0.4, 13.4, -4.95, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. //[Smoluch] add to Z to increase distance bed - head //was -3.53
+#define Z_PROBE_OFFSET {1, 13.8, -5.55, 0}  // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe. //[Smoluch] add to Z to increase distance bed - head //was -3.53 //4.95
 // [Smoluch] new priting head. Old values {0, 13.6, -3.50, 0}
 
 // default settings
